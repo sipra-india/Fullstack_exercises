@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: User opens the single-page app version
+    activate server
+
+    server-->>browser: HTML document with the single-page app
+    deactivate server
+
+    Note right of browser: Browser loads the single-page app
+
+    browser->>server: AJAX request for initial data
+    activate server
+
+    server-->>browser: JSON data containing initial notes
+    deactivate server
+
+    Note right of browser: Browser renders the initial notes
+
+    Note over browser, server: User interacts with the single-page app

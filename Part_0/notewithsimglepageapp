@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: User creates a new note
+    activate server
+
+    server-->>server: Server processes the new note creation
+    server-->>server: Server stores the new note data
+
+    server-->>browser: Server sends a success response
+    deactivate server
+
+    Note right of browser: Browser updates the view with the new note

@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: User clicks on the webpage link
+    activate server
+
+    Note right of browser: The webpage opens
+
+    browser->>server: User clicks on the text field, types a new note message and clicks the "Save" button
+
+    server-->>server: Server processes the new note and stores the new note data
+
+    server-->>browser: Server responds with a success message
+    deactivate server
+
+    Note right of browser: Browser updates the page to show the new note
